@@ -21,7 +21,7 @@ function PlantPage() {
     setPlants(updatedPlantsArray);
   }
 
-  const displayedPlants = plants.filter((plant) => {
+  const displayedPlants = (Array.isArray(plants) ? plants : []).filter((plant) => {
     return plant.name.toLowerCase().includes(searchTerm.toLowerCase());
   });
 
